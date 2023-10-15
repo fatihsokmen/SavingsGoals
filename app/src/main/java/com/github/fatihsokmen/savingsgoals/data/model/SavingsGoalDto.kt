@@ -12,5 +12,5 @@ data class SavingsGoalDto(
 @Serializable
 data class TotalSavedDto(
     val currency: String,
-    val minorUnits: Long
+    val minorUnits: Double
 )

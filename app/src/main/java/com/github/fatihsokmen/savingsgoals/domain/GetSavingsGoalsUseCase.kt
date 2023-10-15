@@ -37,7 +37,8 @@ class GetSavingsGoalsUseCase @Inject constructor(
                         dto.name,
                         TotalSaved(
                             dto.totalSaved.currency,
-                            BigDecimal.valueOf(dto.totalSaved.minorUnits).movePointLeft(2)
+                            BigDecimal(dto.totalSaved.minorUnits).stripTrailingZeros()
+                                .movePointLeft(2)
                         )
                     )
                 }

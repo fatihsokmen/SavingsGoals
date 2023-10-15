@@ -20,7 +20,7 @@ fun SavingsGoalsApp(
             navController = appState.navController,
             startDestination = Screen.Home.route
         ) {
-            composable(Screen.Home.route) { entry ->
+            composable(Screen.Home.route) { _ ->
                 HomeScreen {
                     appState.navController.navigate(Screen.AddGoal.route)
                 }

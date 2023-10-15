@@ -37,11 +37,11 @@ class CalculateRoundupUseCase @Inject constructor(
             }
             .map { transactions ->
                 transactions.fold(BigDecimal.ZERO) { sum, transaction ->
-                    val amount = BigDecimal.valueOf(transaction.amount.minorUnits.toDouble())
+                    val amount = BigDecimal.valueOf(transaction.amount.minorUnits)
                         .stripTrailingZeros()
                         .movePointLeft(GBP_MONETARY_UNIT)
                     val delta =
-                        amount.round(MathContext(GBP_MONETARY_UNIT, RoundingMode.UP)) - amount
+                        amount.setScale(0, RoundingMode.UP) - amount
 
                     sum + delta
                 }

@@ -36,6 +36,5 @@ class TransferRoundupAmountUseCase @Inject constructor(
                         )
                     )
                 }
-            }
-            .flowOn(dispatcher)
+            }.flowOn(dispatcher)
 }

@@ -4,6 +4,7 @@ import com.github.fatihsokmen.savingsgoals.data.model.AddIntoSavingsGoalRequestD
 import com.github.fatihsokmen.savingsgoals.data.model.AmountDto
 import com.github.fatihsokmen.savingsgoals.data.model.CreateSavingsGoalRequestDto
 import com.github.fatihsokmen.savingsgoals.data.model.SavingsGoalDto
+import com.github.fatihsokmen.savingsgoals.data.model.TransferIntoGoalResponseDto
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.math.BigDecimal
@@ -17,7 +18,7 @@ interface SavingsGoalsRepository {
         savingsGoalUid: String,
         transferUid: String,
         amount: BigDecimal
-    )
+    ): TransferIntoGoalResponseDto
 }
 
 class SavingsGoalsRepositoryImpl @Inject constructor(
