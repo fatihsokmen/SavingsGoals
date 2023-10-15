@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Saving Goals</string>
+    <string name="connection_error_title">Error</string>
+    <string name="connection_error_message">Please check your internet connection</string>
+    <string name="connection_retry_label">Retry</string>
+    <string name="home_toolbar_title">Spaces</string>
+    <string name="home_loading_error">Error while loading account</string>
+    <string name="home_action_retry">Retry</string>
+    <string name="home_saving_spaces_label">Saving Space</string>
+    <string name="home_saving_spaces_description">Holiday, house renovations or a new car? Create a Space to help you save towards your goal</string>
+    <string name="new_space_toolbar_title">New Space</string>
+    <string name="new_space_input_label">Create</string>
+    <string name="new_space_input_description">Let\'s begin</string>
+    <string name="new_space_submit_label">Submit</string>
+    <string name="home_round_up_calculation_title">Select a date to calculate round up</string>
+    <string name="home_round_up_calculation_description">Round up will be calculated from date a week prior of selected date</string>
+    <string name="home_select_date_label">Select Date</string>
+</resources>
