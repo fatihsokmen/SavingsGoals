@@ -119,7 +119,7 @@ fun GoalNameInput(onCrateNewSpace: (String) -> Unit, padding: PaddingValues) {
         )
         Spacer(modifier = Modifier.height(8.dp))
         Row(modifier = Modifier.fillMaxWidth()) {
-            Button(onClick = { onCrateNewSpace(goalName) }
+            Button(modifier = Modifier.padding(16.dp), onClick = { onCrateNewSpace(goalName) }
             ) {
                 Text(text = stringResource(R.string.new_space_submit_label))
             }
