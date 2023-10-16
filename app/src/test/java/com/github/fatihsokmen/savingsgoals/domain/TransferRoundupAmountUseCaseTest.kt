@@ -26,7 +26,7 @@ class TransferRoundupAmountUseCaseTest {
             accountsRepository.getAccounts()
         } returns flowOf(listOf(account))
 
-        val transferResponse = TransferIntoGoalResponseDto
+        val transferResponse = TransferIntoGoalResponseDto(success = true)
         coEvery {
             savingsGoalsRepository.addIntoSavingsGoal(
                 accountUid = "account-uid",

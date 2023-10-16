@@ -7,6 +7,8 @@ import retrofit2.http.Query
 
 interface TransactionsApiService {
 
+    //TODO: Instant should be passed as parameter not [String], time serialization should be done on transport level (request to json serialization), not here.
+
     @GET("api/v2/feed/account/{accountUid}/category/{categoryUid}/transactions-between")
     suspend fun geTransactionsBetween(
         @Path("accountUid") accountUid: String,
