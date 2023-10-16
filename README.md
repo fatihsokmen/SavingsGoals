@@ -1,4 +1,4 @@
-# SavingsGoals Coding Test
+# `SavingsGoals` Coding Test
 ## Candidate: Fatih Sokmen (fatih.sokmen@gmail.com)
 
 This coding test implements a “round-up” feature using our public developer API that is available to all customers and partners.
