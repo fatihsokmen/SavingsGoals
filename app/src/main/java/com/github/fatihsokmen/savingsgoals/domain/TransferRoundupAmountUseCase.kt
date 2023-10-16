@@ -33,7 +33,7 @@ class TransferRoundupAmountUseCase @Inject constructor(
                             savingsGoalUid = savingsGoalUid,
                             transferUid = UUID.randomUUID().toString(),
                             amount = amount
-                        )
+                        ).success
                     )
                 }
             }.flowOn(dispatcher)

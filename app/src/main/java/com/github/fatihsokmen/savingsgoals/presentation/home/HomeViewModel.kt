@@ -17,6 +17,7 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.single
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
@@ -39,7 +40,6 @@ class HomeViewModel @Inject constructor(
     private val goalsState = refreshGoalState
         .flatMapLatest { getSavingsGoalsUseCase.execute() }
         .map<List<SavingsGoal>, GoalsState>(GoalsState::Success)
-        .onStart { emit(GoalsState.Loading) }
         .catch { emit(GoalsState.Error(it.message.orEmpty())) }
 
     private val dateState = MutableStateFlow(
@@ -58,7 +58,7 @@ class HomeViewModel @Inject constructor(
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = HomeViewState(GoalsState.Loading, RoundupState.Loading)
+            initialValue = HomeViewState(GoalsState.Loading, RoundupState.Idle)
         )
 
     fun onDateSelected(year: Int, month: Int, dayOfMonth: Int) {
@@ -76,7 +76,7 @@ class HomeViewModel @Inject constructor(
                 transferRoundupUseCase
                     .execute(savingGoal.savingsGoalUid, amount)
                     .map { refreshGoalState.value = refreshGoalState.value.not() }
-                    .collect()
+                    .single()
             }
         }
     }
