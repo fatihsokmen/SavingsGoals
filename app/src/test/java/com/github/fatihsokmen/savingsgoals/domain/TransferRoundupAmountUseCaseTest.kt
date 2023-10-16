@@ -41,7 +41,7 @@ class TransferRoundupAmountUseCaseTest {
             TransferRoundupAmountUseCase(accountsRepository, savingsGoalsRepository, dispatcher)
 
         subject.execute("saving-goal-uid", BigDecimal.TEN).test {
-            awaitItem() shouldBe transferResponse
+            awaitItem() shouldBe true
             awaitComplete()
         }
     }

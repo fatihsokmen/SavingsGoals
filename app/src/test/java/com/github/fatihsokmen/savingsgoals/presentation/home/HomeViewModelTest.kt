@@ -18,7 +18,7 @@ import org.junit.Test
 import java.math.BigDecimal
 
 /**
- * ViewModel state tests
+ * HomeViewModel state tests
  */
 class HomeViewModelTest {
     @get: Rule

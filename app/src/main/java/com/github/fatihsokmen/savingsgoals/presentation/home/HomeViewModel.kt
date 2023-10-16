@@ -52,6 +52,7 @@ class HomeViewModel @Inject constructor(
         .onStart { emit(RoundupState.Idle) }
         .catch { emit(RoundupState.Error(it.message.orEmpty())) }
 
+    // Composite Screen state for [HomeScreen]
     val uiState = combine(goalsState, roundupState) { goalState, roundupState ->
         HomeViewState(goalState, roundupState)
     }
