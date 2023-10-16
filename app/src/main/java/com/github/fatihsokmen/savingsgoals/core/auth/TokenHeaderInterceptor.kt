@@ -14,6 +14,7 @@ class TokenHeaderInterceptor(
     private fun Request.signedRequest(): Request {
         return newBuilder()
             .header("Authorization", "Bearer ${tokenStore.getAccessToken()}")
+            .header("User-Agent", "Fatih Sokmen")
             .build()
     }
 }
