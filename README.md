@@ -24,6 +24,8 @@ App consists of 2 screens
 - Turbine for Flow tests
 - Kotest assert for assertions
 
+`./gradlew test`
+
 ## Authentication
 - App uses sand-box api.
 - When no `Bearer` token is used, sandbox backend responds with Http 403 (401 would be expected here). Hence, app can't use a Retrofit `Authenticator` to refresh token, therefore a custom `Interceptor` is need to handle 403 to refresh access token
