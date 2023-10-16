@@ -34,7 +34,7 @@ App consists of 2 screens
 - All repositories use remote api services that some caching can be added to reduce api calls.
   Example: Most api call require `Account` info. `AccountRepository` can cache account info on memory or disk.
 - Custom serializer for BigDecimal is needed.
-
+- `Mockk`can't be upgraded to most recent version becuase there is jvm byte code incompatiblilty, so I used an earlier version.
 
 
 
